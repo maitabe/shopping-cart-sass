@@ -1,5 +1,15 @@
+
+/* Use @extend when you want to store multiple static properties and pass them to selectors */
+
+@import 'config';
+
+.display-align {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 body {
-  background-color: #EAEBE7;
+  background-color: $main-background-grey;
 }
 
 .card-container{
@@ -8,7 +18,7 @@ body {
   background-color: white;
   overflow: hidden;
   z-index: 20;
-  box-shadow: 2px 2px 2px #B3B3B3;
+  box-shadow: $shadow-container;
   margin: 20px;
 }
 
@@ -16,14 +26,16 @@ body {
   height: 50px;
   width: 100px;
   position: absolute;
-  background-color: #FF5351;
+  background-color: $price-box-color;
   display: table;
 }
+
 .price {
-  display: table-cell;
-  vertical-align: middle;
+  /*display: table-cell;
+  vertical-align: middle;*/
+  @extend .display-align;
   color: white;
-  font-family: Oswald;
+  font-family: $font-stack;
   font-size: 20px;
   text-align: center;
 }
@@ -32,16 +44,17 @@ body {
   height: 50px;
   width: 100%;
   position: absolute;
-  background-color: #008cba;
+  background-color: $buybox-color;
   display: table;
   bottom: 0;
 }
 
 .add-to-cart {
-  display: table-cell;
-  vertical-align: middle;
+  /*display: table-cell;
+  vertical-align: middle;*/
+  @extend .display-align;
   color: white;
-  font-family: Oswald;
+  font-family: $font-stack;
   font-size: 20px;
   text-align: center;
   cursor: pointer;
@@ -61,8 +74,9 @@ body {
 }
 
 .card-inner {
-  display: table-cell;
-  vertical-align: middle;
+  /*display: table-cell;
+  vertical-align: middle;*/
+  @extend .display-align;
 }
 
 
@@ -71,12 +85,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-height: 90%;
-  max-width: 90%; 
+  max-width: 90%;
 }
 
 .page-header h1 {
   text-align: center;
-  font-family: Oswald;
+  font-family: $font-stack;
   margin-top: 70px;
 }
 
@@ -86,7 +100,7 @@ body {
   right: 40px;
   display: none;
   background-color: #fff;
-  box-shadow: 2px 2px 2px #B3B3B3;
+  box-shadow: $shadow-container;
   padding: 15px;
   z-index: 999;
 }
